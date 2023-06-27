@@ -1,0 +1,279 @@
+/*
+font families
+font-family: 'Anton', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+:root{
+    --mgm2045-logo-color-light: rgba(81, 149, 201, 0.5);
+    --mgm2045-logo-color-dark: rgba(19, 85, 135, 0.9);
+    --mgm2045-logo-text-color: #333;
+    --dark-gray: #aaa;
+}
+
+*{
+
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 10px;
+    padding: 0px;
+    border: 1px solid black;
+}
+
+main{
+    margin: 5px;
+    min-height: 100vh;
+    position: relative;
+    border: 1px solid black;
+}
+
+main::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+        115deg,
+        rgba(58, 58, 158, 0.5),
+        rgba(136, 136, 206, 0.5)
+      ),
+      url(https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.attribution, .attribution>*{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    color: white;
+    text-align: right;
+}
+
+/* header settings*/
+header{
+    display: flex;
+    width: 100;
+    margin: 1px;
+    padding: 0.5em;
+    justify-content: space-between;
+    background-color: var(--dark-gray);
+}
+
+@media (max-width: 475px){
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* My Logo Settings*/
+.mgm2045-logo i{
+    font-size: 3rem;
+    padding: 10px;
+    color: var(--mgm2045-logo-text-color);
+    animation-name: icon-rotate;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation: icon-rotate 8s ease infinite;
+}
+
+@keyframes icon-rotate{
+    0% {
+        transform-origin: 50% 50%;
+        transform: rotate(0deg);
+        opacity: 100;
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    98%{
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.mgm2045-logo h2{
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--mgm2045-logo-text-color);
+}
+
+.mgm2045-logo{
+    display: flex;
+    border: 2px solid var(--mgm2045-logo-text-color);;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    border-radius: 5px;
+    background: linear-gradient(
+        45deg,
+        var(--mgm2045-logo-color-light),
+        var(--mgm2045-logo-color-dark)
+    )
+}
+
+@media (max-width: 650px){
+    .mgm2045-logo i{
+        font-size: 2rem;
+    }
+    .mgm2045-logo h2{
+        font-size: 0.8rem;
+    }
+    .mgm2045-logo{
+        width: 130px;
+    }
+}
+
+/* End of My Logo Settings*/
+
+/* navbar settings*/
+#nav-list{
+    display: flex;
+    gap: 2em;
+}
+
+#nav-list li{
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+}
+
+#nav-list li:last-of-type{
+    margin-right: 3em;
+}
+
+#nav-list li>a{
+    text-decoration: none;
+    color: var(--mgm2045-logo-text-color);
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    
+}
+
+#nav-list li:hover{
+    background-color: var(--mgm2045-logo-color-dark);
+}
+
+#nav-list li:active{
+    background-color: var(--mgm2045-logo-color-light);
+}
+/* end of navbar settings*/
+
+/* footer settings*/
+
+#social-and-contact{
+    max-height: 200px;
+    margin: 1px;
+    display: flex;
+    background: linear-gradient(
+        45deg,
+        var(--mgm2045-logo-color-light),
+        var(--mgm2045-logo-color-dark)
+    );
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    max-width: 200px;
+    justify-content: space-evenly;
+    flex: auto;
+    text-align: center;
+}
+
+#info *{
+    margin: 0;
+    padding: 0;
+}
+
+#info p, h5, a, p, #social-icons {
+    text-align: center;
+    color: var(--mgm2045-logo-text-color);
+    font-family: 'Anton', sans-serif;
+}
+
+#info h5{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#info a{
+    font-size: 1.3em;
+}
+
+#info p{
+    font-size: 0.9em;
+}
+
+#info #social-icons{
+    text-decoration: none;
+    color: var(--mgm2045-logo-text-color);
+    font-size: 1.2em;
+}
+
+@media (max-width: 650px){
+    #info h5{
+    font-weight: bold;
+    font-size: 1em;
+    }
+
+    #info a{
+        font-size: 0.8em;
+    }
+
+    #info p{
+        font-size: 0.6em;
+    }
+
+    #info #social-icons{
+        text-decoration: none;
+        color: var(--mgm2045-logo-text-color);
+        font-size: 0.85em;
+    }
+}
+
+#feedback-form{
+    display: flex;
+    max-height: 200px;
+}
+
+#feedback-form *{
+    font-family: 'Roboto', sans-serif;
+    margin: 2px;
+}
+
+select{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+
+#question2{
+    margin-top: 10px;
+}
+
+/* end of footer settings*/
